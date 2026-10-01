@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traducciones Profesionales MJ | Inglés <-> Español</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts Inter & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            700: '#1B365D',
+                            800: '#0F2C59',
+                            900: '#081B38',
+                        },
+                        gold: {
+                            400: '#F1C40F',
+                            500: '#D4AF37',
+                            600: '#AA820A',
+                        },
+                        azure: '#008DDA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-hero {
+            background: linear-gradient(135deg, #081B38 0%, #0F2C59 60%, #1B365D 100%);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(15, 44, 89, 0.12), 0 8px 10px -6px rgba(15, 44, 89, 0.08);
+        }
+        .pair-radio:checked + label {
+            border-color: #D4AF37;
+            background-color: #FAF5E8;
+            color: #0F2C59;
+            box-shadow: 0 0 0 2px #D4AF37;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-slate-50 antialiased selection:bg-gold-500 selection:text-white"><div id="site-language" class="fixed top-5 right-5 z-[100] flex rounded-full bg-white/95 p-1 shadow-xl border border-gold-500/30"><button type="button" onclick="setSiteLanguage('es')" data-lang="es" class="px-3 py-1.5 rounded-full text-xs font-bold bg-navy-800 text-white">ES</button><button type="button" onclick="setSiteLanguage('en')" data-lang="en" class="px-3 py-1.5 rounded-full text-xs font-bold text-navy-800">EN</button></div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 bg-navy-800 rounded-xl flex items-center justify-center text-gold-500 font-heading font-black text-xl shadow-md group-hover:bg-navy-700 transition-colors duration-300 border border-gold-500/30">
+                        MJ
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-heading font-bold text-lg leading-tight text-navy-800 tracking-tight">Traducciones</span>
+                        <span class="font-heading font-bold text-xs tracking-widest text-gold-500 uppercase">Profesionales MJ</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-gray-600">
+                    <a href="#inicio" class="hover:text-navy-800 transition-colors">Inicio</a>
+                    <a href="#cotizador" class="hover:text-navy-800 transition-colors">Cotizador</a>
+                    <a href="#servicios" class="hover:text-navy-800 transition-colors">Servicios</a>
+                    <a href="#proceso" class="hover:text-navy-800 transition-colors">Proceso</a>
+                    <a href="#nosotros" class="hover:text-navy-800 transition-colors">Nosotros</a>
+                    <a href="#contacto" class="hover:text-navy-800 transition-colors">Contacto</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="https://www.facebook.com/profile.php?id=100077754728816" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 text-blue-600 hover:text-blue-700 bg-blue-50 px-4 py-2.5 rounded-xl transition-all font-semibold text-xs border border-blue-100 hover:bg-blue-100">
+                        <i class="fab fa-facebook-square text-base"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#cotizador" class="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-500 text-navy-900 font-bold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all text-xs flex items-center space-x-2 border border-gold-400/40">
+                        <i class="fas fa-calculator"></i>
+                        <span>Cotizar Ahora</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-navy-800 hover:text-navy-700 focus:outline-none p-2" aria-label="Abrir Menú">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="mobile-link block py-2 text-gray-700 hover:text-navy-800 font-medium">Inicio</a>
+            <a href="#cotizador" class="mobile-link block py-2 text-gray-700 hover:text-navy-800 font-medium">Cotizador</a>
+            <a href="#servicios" class="mobile-link block py-2 text-gray-700 hover:text-navy-800 font-medium">Servicios</a>
+            <a href="#proceso" class="mobile-link block py-2 text-gray-700 hover:text-navy-800 font-medium">Proceso</a>
+            <a href="#nosotros" class="mobile-link block py-2 text-gray-700 hover:text-navy-800 font-medium">Por Qué Elegirnos</a>
+            <a href="#contacto" class="mobile-link block py-2 text-gray-700 hover:text-navy-800 font-medium">Contacto</a>
+            <div class="pt-4 border-t border-gray-100 flex flex-col space-y-3">
+                <a href="https://www.facebook.com/profile.php?id=100077754728816" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center space-x-2 bg-blue-50 text-blue-600 py-2.5 rounded-xl font-bold text-xs border border-blue-100">
+                    <i class="fab fa-facebook text-lg"></i>
+                    <span>Página Oficial de Facebook</span>
+                </a>
+                <a href="#cotizador" class="mobile-link flex items-center justify-center space-x-2 bg-gold-500 text-navy-900 py-2.5 rounded-xl font-extrabold text-xs shadow">
+                    <i class="fas fa-calculator"></i>
+                    <span>Cotización Inmediata</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="gradient-hero text-white pt-16 pb-24 relative overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-gold-500/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-gold-500/30 text-xs font-semibold text-gold-400">
+                        <i class="fas fa-star text-gold-400"></i>
+                        <span>Especialistas Exclusivos: Inglés <-> Español</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-black leading-tight tracking-tight">
+                        Traducciones Certificadas y Profesionales <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-amber-300 to-gold-500">Inglés y Español</span>
+                    </h1>
+
+                    <p class="text-lg text-slate-200 font-light max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Servicios especializados de traducción jurada, académica, técnica y corporativa. Garantía de precisión, confidencialidad y validez oficial.
+                    </p>
+
+                    <!-- Hero CTA Buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#cotizador" class="w-full sm:w-auto bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-500 text-navy-900 font-black px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-3 text-sm tracking-wide">
+                            <i class="fas fa-calculator text-base"></i>
+                            <span>Calcular Cotización Gratis</span>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100077754728816" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-4 rounded-xl border border-white/20 backdrop-blur-sm transition-all duration-300 flex items-center justify-center space-x-3 text-sm">
+                            <i class="fab fa-facebook text-xl text-blue-400"></i>
+                            <span>Página de Facebook</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-1 sm:space-y-0 sm:space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-gold-400 border border-gold-500/20">
+                                <i class="fas fa-certificate text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xs uppercase tracking-wider text-white">Validez Oficial</h4>
+                                <p class="text-[11px] text-slate-300">Traducción Certificada</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-1 sm:space-y-0 sm:space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-gold-400 border border-gold-500/20">
+                                <i class="fas fa-bolt text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xs uppercase tracking-wider text-white">Entrega Exprés</h4>
+                                <p class="text-[11px] text-slate-300">Respuesta Inmediata</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-1 sm:space-y-0 sm:space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-gold-400 border border-gold-500/20">
+                                <i class="fas fa-user-shield text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xs uppercase tracking-wider text-white">Confidencial</h4>
+                                <p class="text-[11px] text-slate-300">100% Seguro</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Hero Interactive Language Showcase Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-white/20 shadow-2xl space-y-6 relative">
+                        <div class="flex justify-between items-center border-b border-white/10 pb-4">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></span>
+                                <span class="text-xs font-bold tracking-widest text-slate-200 uppercase">Especialización Bilingüe</span>
+                            </div>
+                            <span class="text-xs bg-gold-500/20 text-gold-300 border border-gold-500/40 px-3 py-1 rounded-full font-bold">MJ</span>
+                        </div>
+
+                        <!-- Language Flow Graphic -->
+                        <div class="space-y-4">
+                            <div class="bg-navy-900/90 p-4 rounded-2xl border border-gold-500/20 flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-3xl">🇺🇸</span>
+                                    <div>
+                                        <p class="text-[10px] text-gold-400 uppercase font-bold tracking-wider">Language</p>
+                                        <p class="font-bold text-sm text-white">Inglés (English)</p>
+                                    </div>
+                                </div>
+                                <div class="text-gold-400 text-xl px-2">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </div>
+                                <div class="flex items-center space-x-3 text-right">
+                                    <div>
+                                        <p class="text-[10px] text-gold-400 uppercase font-bold tracking-wider">Idioma</p>
+                                        <p class="font-bold text-sm text-white">Español</p>
+                                    </div>
+                                    <span class="text-3xl">🇲🇽</span>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3 text-xs">
+                                <div class="bg-white/5 p-3 rounded.xl border border-white/10 rounded-xl">
+                                    <p class="text-slate-200 font-bold"><i class="fas fa-file-invoice text-gold-400 mr-1.5"></i> Oficial & Jurado</p>
+                                    <p class="text-slate-400 text-[11px] mt-0.5">Visas, Actas, Títulos</p>
+                                </div>
+                                <div class="bg-white/5 p-3 rounded-xl border border-white/10">
+                                    <p class="text-slate-200 font-bold"><i class="fas fa-building text-gold-400 mr-1.5"></i> Corporativo</p>
+                                    <p class="text-slate-400 text-[11px] mt-0.5">Contratos, Manuales</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Facebook Page Banner -->
+                        <div class="bg-gradient-to-r from-blue-900/90 to-navy-900/90 p-4 rounded-2xl border border-blue-400/30 flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white text-lg shadow">
+                                    <i class="fab fa-facebook-f"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[11px] text-blue-200">Encuéntranos en Facebook</p>
+                                    <p class="text-xs font-bold text-white">Traducciones Profesionales MJ</p>
+                                </div>
+                            </div>
+                            <a href="https://www.facebook.com/profile.php?id=100077754728816" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 text-white text-xs px-3.5 py-2 rounded-lg font-bold transition-colors">
+                                Ir <i class="fas fa-external-link-alt ml-1 text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quote Calculator -->
+    <section id="cotizador" class="py-20 bg-slate-100 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-navy-800 font-bold text-xs uppercase tracking-widest bg-gold-500/10 px-3.5 py-1.5 rounded-full border border-gold-500/30">Cotizador Instantáneo</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-navy-800 mt-3">Calcula el Costo de tu Traducción</h2>
+                <p class="text-gray-600 text-sm mt-2">Selecciona la combinación de idioma (exclusivamente Inglés <-> Español), tipo de documento y volumen.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl border border-gray-200/80 overflow-hidden">
+                <div class="p-6 sm:p-10">
+                    <form id="calculator-form" onsubmit="return false;" class="space-y-8">
+                        
+                        <!-- Step 1: Strict Language Pair Choice -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-navy-800 tracking-wider mb-3 flex items-center justify-between">
+                                <span>1. Combinación de Idiomas (Exclusivo)</span>
+                                <span class="text-gold-600 text-[11px] font-semibold"><i class="fas fa-lock mr-1"></i>Sólo Inglés y Español</span>
+                            </label>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <input type="radio" id="pair-en-es" name="language_pair" value="en-es" class="hidden pair-radio" checked>
+                                    <label for="pair-en-es" class="flex items-center justify-between p-4 rounded-2xl border border-gray-200 cursor-pointer transition-all hover:border-gold-500">
+                                        <div class="flex items-center space-x-3">
+                                            <span class="text-2xl">🇺🇸 ➔ 🇲🇽</span>
+                                            <div>
+                                                <p class="font-bold text-sm text-navy-800">Inglés a Español</p>
+                                                <p class="text-[11px] text-gray-500">English to Spanish</p>
+                                            </div>
+                                        </div>
+                                        <i class="fas fa-check-circle text-gold-500 text-lg opacity-0 check-icon"></i>
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <input type="radio" id="pair-es-en" name="language_pair" value="es-en" class="hidden pair-radio">
+                                    <label for="pair-es-en" class="flex items-center justify-between p-4 rounded-2xl border border-gray-200 cursor-pointer transition-all hover:border-gold-500">
+                                        <div class="flex items-center space-x-3">
+                                            <span class="text-2xl">🇲🇽 ➔ 🇺🇸</span>
+                                            <div>
+                                                <p class="font-bold text-sm text-navy-800">Español a Inglés</p>
+                                                <p class="text-[11px] text-gray-500">Spanish to English</p>
+                                            </div>
+                                        </div>
+                                        <i class="fas fa-check-circle text-gold-500 text-lg opacity-0 check-icon"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Document Type -->
+                        <div>
+                            <label for="doc-type" class="block text-xs font-bold uppercase text-navy-800 tracking-wider mb-3">
+                                2. Tipo de Documento
+                            </label>
+                            <div class="relative">
+                                <select id="doc-type" class="w-full bg-slate-50 border border-gray-200 rounded-xl px-4 py-3.5 text-navy-800 focus:ring-2 focus:ring-navy-800 focus:outline-none appearance-none font-semibold text-sm">
+                                    <option value="legal" data-factor="1.25" selected>Certificado / Jurado / Oficial (Actas, Visas, Diplomas, Contratos)</option>
+                                    <option value="general" data-factor="1.0">General (Cartas, Artículos, Documentos Personales)</option>
+                                    <option value="technical" data-factor="1.35">Técnico / Médico / Científico (Manuales, Informes)</option>
+                                    <option value="corporate" data-factor="1.2">Corporativo / Negocios (Estatutos, Auditorías)</option>
+                                    <option value="web" data-factor="1.3">Sitio Web / Contenido Digital</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-navy-800">
+                                    <i class="fas fa-chevron-down text-xs"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Volume Input (Pages and Words) -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="volume-input" class="text-xs font-bold uppercase text-navy-800 tracking-wider">
+                                    3. Volumen del Documento
+                                </label>
+                                <span class="text-xs text-navy-800 font-bold" id="volume-indicator">2 Páginas (~500 Palabras)</span>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                                <div class="md:col-span-2">
+                                    <input type="range" id="volume-range" min="1" max="50" value="2" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-navy-800">
+                                    <div class="flex justify-between text-[11px] text-gray-400 mt-1 font-medium">
+                                        <span>1 pág.</span>
+                                        <span>15 págs.</span>
+                                        <span>30 págs.</span>
+                                        <span>50+ págs.</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="relative">
+                                        <input type="number" id="volume-input" min="1" max="500" value="2" class="w-full bg-slate-50 border border-gray-200 rounded-xl px-4 py-3 text-navy-800 font-extrabold focus:ring-2 focus:ring-navy-800 focus:outline-none text-sm">
+                                        <span class="absolute right-3 top-3.5 text-xs font-bold text-gray-400">Páginas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-[11px] text-gray-400 mt-2">* Estimación promedio estándar basada en ~250 palabras por página.</p>
+                        </div>
+
+                        <!-- Step 4: Options and Currency -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                            <div>
+                                <label for="urgency-select" class="block text-xs font-bold uppercase text-navy-800 tracking-wider mb-2">
+                                    4. Tiempo de Entrega
+                                </label>
+                                <select id="urgency-select" class="w-full bg-slate-50 border border-gray-200 rounded-xl px-4 py-3 text-navy-800 focus:ring-2 focus:ring-navy-800 focus:outline-none appearance-none font-semibold text-sm">
+                                    <option value="normal" data-multiplier="1.0" selected>Estándar (24 a 48 Horas)</option>
+                                    <option value="express" data-multiplier="1.35">Exprés (Menos de 24 Horas)</option>
+                                    <option value="ultra" data-multiplier="1.7">Urgente / Mismo Día</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="currency-select" class="block text-xs font-bold uppercase text-navy-800 tracking-wider mb-2">
+                                    Moneda de Cotización
+                                </label>
+                                <select id="currency-select" class="w-full bg-slate-50 border border-gray-200 rounded-xl px-4 py-3 text-navy-800 focus:ring-2 focus:ring-navy-800 focus:outline-none appearance-none font-semibold text-sm">
+                                    <option value="MXN" selected>Pesos Mexicanos (MXN $)</option>
+                                    <option value="USD">Dólares Americanos (USD $)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Result Display Box -->
+                        <div class="bg-gradient-to-br from-navy-800 via-navy-800 to-navy-900 rounded-2xl p-6 sm:p-8 text-white shadow-xl space-y-6 border border-gold-500/20">
+                            <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b border-white/10 pb-4 gap-4">
+                                <div>
+                                    <p class="text-xs uppercase text-gold-400 font-bold tracking-wider">Estimado Aproximado</p>
+                                    <div class="flex items-baseline space-x-2">
+                                        <span class="text-3xl sm:text-4xl font-heading font-black text-white" id="calculated-price">$300 - $450</span>
+                                        <span class="text-xs text-gold-300 font-bold" id="calculated-currency">MXN</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white/10 px-4 py-2.5 rounded-xl border border-white/10 text-left sm:text-right">
+                                    <p class="text-[11px] text-slate-300">Entrega Estimada:</p>
+                                    <p class="text-sm font-extrabold text-gold-400" id="calculated-time">24 a 48 Horas Hábles</p>
+                                </div>
+                            </div>
+
+                            <!-- Dispatch Buttons -->
+                            <div class="space-y-3">
+                                <p class="text-xs text-slate-300 text-center sm:text-left">¿Te interesa esta estimación? Envíanos los detalles para confirmar tu precio final:</p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <a id="btn-quote-facebook" href="https://www.facebook.com/profile.php?id=100077754728816" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center space-x-2 transition-all shadow">
+                                        <i class="fab fa-facebook-messenger text-lg"></i>
+                                        <span>Cotizar en Facebook</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Services -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-navy-800 font-bold text-xs uppercase tracking-widest bg-gold-500/10 px-3.5 py-1.5 rounded-full border border-gold-500/30">Nuestras Especialidades</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-navy-800 mt-3">Servicios de Traducción Inglés <-> Español</h2>
+                <p class="text-gray-600 mt-2 text-sm">Ofrecemos máxima rigurosidad y calidad terminológica adaptada a cada tipo de documento.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-gray-200/80 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-navy-800 text-gold-400 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md border border-gold-500/20">
+                            <i class="fas fa-stamp"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-navy-800 mb-3">Traducción Certificada / Jurada</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                            Documentos oficiales válidos ante autoridades gubernamentales, trámites de visado (USCIS/Embajadas) e instituciones educativas.
+                        </p>
+                        <ul class="text-xs text-gray-500 space-y-2 mb-6">
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Actas de nacimiento, matrimonio y defunción</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Títulos, diplomas y kardex escolares</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Certificados, visados y antecedentes</li>
+                        </ul>
+                    </div>
+                    <a href="#cotizador" class="inline-flex items-center text-xs font-bold text-navy-800 hover:text-gold-600 transition-colors">
+                        <span>Cotizar Traducción Oficial</span> <i class="fas fa-arrow-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-gray-200/80 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-navy-800 text-gold-400 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md border border-gold-500/20">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-navy-800 mb-3">Técnica y Corporativa</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                            Traducción experta para empresas e industrias que requieren precisión conceptual entre inglés y español.
+                        </p>
+                        <ul class="text-xs text-gray-500 space-y-2 mb-6">
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Contratos, acuerdos y estatutos</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Manuales de operación e ingeniería</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Informes financieros y corporativos</li>
+                        </ul>
+                    </div>
+                    <a href="#cotizador" class="inline-flex items-center text-xs font-bold text-navy-800 hover:text-gold-600 transition-colors">
+                        <span>Cotizar Documento Técnico</span> <i class="fas fa-arrow-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-gray-200/80 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-navy-800 text-gold-400 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md border border-gold-500/20">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-navy-800 mb-3">Sitios Web y Contenido Digital</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                            Localización natural de páginas web, tiendas en línea y aplicaciones para conectar con mercados angloparlantes e hispanohablantes.
+                        </p>
+                        <ul class="text-xs text-gray-500 space-y-2 mb-6">
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Plataformas e-commerce y landing pages</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Artículos y blogs especializados</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Presentaciones y brochures digitales</li>
+                        </ul>
+                    </div>
+                    <a href="#cotizador" class="inline-flex items-center text-xs font-bold text-navy-800 hover:text-gold-600 transition-colors">
+                        <span>Cotizar Proyecto Web</span> <i class="fas fa-arrow-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-gray-200/80 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-navy-800 text-gold-400 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md border border-gold-500/20">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-navy-800 mb-3">Corrección de Estilo y Edición</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                            Revisión ortográfica, gramatical y estilística minuciosa para textos ya traducidos en inglés o español.
+                        </p>
+                        <ul class="text-xs text-gray-500 space-y-2 mb-6">
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Corrección ortográfica y sintáctica</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Adecuación de tono profesional</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Verificación de glosario técnico</li>
+                        </ul>
+                    </div>
+                    <a href="#cotizador" class="inline-flex items-center text-xs font-bold text-navy-800 hover:text-gold-600 transition-colors">
+                        <span>Cotizar Revisión</span> <i class="fas fa-arrow-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-gray-200/80 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-navy-800 text-gold-400 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md border border-gold-500/20">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-navy-800 mb-3">Académica e Investigación</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">
+                            Traducción impecable para artículos científicos, tesis, ensayos y maestrías internacionales.
+                        </p>
+                        <ul class="text-xs text-gray-500 space-y-2 mb-6">
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Papers y abstracts de investigación</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Tesinas y proyectos finales</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold-500 mr-2"></i> Cartas de recomendación académica</li>
+                        </ul>
+                    </div>
+                    <a href="#cotizador" class="inline-flex items-center text-xs font-bold text-navy-800 hover:text-gold-600 transition-colors">
+                        <span>Cotizar Académico</span> <i class="fas fa-arrow-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Custom Direct Contact Card -->
+                <div class="bg-gradient-to-br from-navy-800 to-navy-900 rounded-2xl p-8 text-white flex flex-col justify-between shadow-lg border border-gold-500/30">
+                    <div>
+                        <div class="w-14 h-14 bg-white/10 text-gold-400 rounded-2xl flex items-center justify-center text-2xl mb-6 border border-white/10">
+                            <i class="fab fa-facebook-messenger"></i>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-white mb-3">¿Consulta Personalizada?</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed mb-6">
+                            Escríbenos directamente a través de Facebook Messenger para proyectos con urgencia especial o archivos extensos.
+                        </p>
+                    </div>
+                    <a href="https://www.facebook.com/profile.php?id=100077754728816" target="_blank" rel="noopener noreferrer" class="bg-gold-500 hover:bg-gold-600 text-navy-900 font-extrabold py-3.5 px-4 rounded-xl text-center text-xs transition-all shadow">
+                        Escribir en Facebook <i class="fab fa-facebook-square ml-1 text-sm"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Process -->
+    <section id="proceso" class="py-20 bg-slate-100 border-y border-gray-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-navy-800 font-bold text-xs uppercase tracking-widest bg-gold-500/10 px-3.5 py-1.5 rounded-full border border-gold-500/30">Proceso Transparente</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-navy-800 mt-3">Tu Traducción en 4 Pasos Sencillos</h2>
+                <p class="text-gray-600 text-sm mt-2">Atención ágil desde la recepción de tu archivo hasta la entrega final.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Step 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-sm text-center relative">
+                    <div class="w-12 h-12 bg-navy-800 text-gold-400 font-heading font-black text-lg rounded-full flex items-center justify-center mx-auto mb-4 border border-gold-500/30">
+                        1
+                    </div>
+                    <h3 class="font-heading font-bold text-navy-800 mb-2">Envío de Documento</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Nos compartes tu documento digital o foto clara vía Facebook Messenger, correo.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-sm text-center relative">
+                    <div class="w-12 h-12 bg-navy-800 text-gold-400 font-heading font-black text-lg rounded-full flex items-center justify-center mx-auto mb-4 border border-gold-500/30">
+                        2
+                    </div>
+                    <h3 class="font-heading font-bold text-navy-800 mb-2">Cotización Formal</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Revisamos el conteo exacto de palabras y te confirmamos tarifa fija y horario exacto de entrega.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-sm text-center relative">
+                    <div class="w-12 h-12 bg-navy-800 text-gold-400 font-heading font-black text-lg rounded-full flex items-center justify-center mx-auto mb-4 border border-gold-500/30">
+                        3
+                    </div>
+                    <h3 class="font-heading font-bold text-navy-800 mb-2">Traducción & Revisión</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Procesamos la traducción respetando el formato original y realizando control de calidad doble.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-sm text-center relative">
+                    <div class="w-12 h-12 bg-gold-500 text-navy-900 font-heading font-black text-lg rounded-full flex items-center justify-center mx-auto mb-4 shadow">
+                        4
+                    </div>
+                    <h3 class="font-heading font-bold text-navy-800 mb-2">Entrega Final</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Recibes tu archivo final en formato PDF listo para presentar, certificado o digitalizado.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-navy-800 font-bold text-xs uppercase tracking-widest bg-gold-500/10 px-3.5 py-1.5 rounded-full border border-gold-500/30">Opiniones de Clientes</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-navy-800 mt-3">Lo Que Opinan Quienes Confían en MJ</h2>
+                <p class="text-gray-600 text-sm mt-2">Traducciones realizadas con rigor para trámites académicos y profesionales.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-slate-50 p-6 rounded-2xl border border-gray-200/80 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-500 text-sm mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-xs text-gray-600 italic mb-4 leading-relaxed">
+                            "Traducción impecable de mi título de inglés a español para la revalidación. Súper rápido el servicio y buena atención por Facebook."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-gray-200">
+                        <div class="w-9 h-9 rounded-full bg-navy-800 text-gold-400 font-bold text-xs flex items-center justify-center">
+                            LR
+                        </div>
+                        <div>
+                            <p class="font-bold text-xs text-navy-800">Laura Rincón</p>
+                            <p class="text-[11px] text-gray-400">Traducción de Título Universitario</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border border-gray-200/80 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-500 text-sm mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-xs text-gray-600 italic mb-4 leading-relaxed">
+                            "Tradujeron mis actas de nacimiento de español a inglés para el trámite de visa. La entrega fue puntual y con la documentación que me solicitaban."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-gray-200">
+                        <div class="w-9 h-9 rounded-full bg-navy-800 text-gold-400 font-bold text-xs flex items-center justify-center">
+                            MA
+                        </div>
+                        <div>
+                            <p class="font-bold text-xs text-navy-800">Miguel Ángel S.</p>
+                            <p class="text-[11px] text-gray-400">Documentos Oficiales / Visa</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border border-gray-200/80 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-500 text-sm mb-3">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-xs text-gray-600 italic mb-4 leading-relaxed">
+                            "Servicio corporativo de primer nivel. Nos ayudaron con contratos comerciales en inglés. Muy formales y profesionales."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-gray-200">
+                        <div class="w-9 h-9 rounded-full bg-navy-800 text-gold-400 font-bold text-xs flex items-center justify-center">
+                            GS
+                        </div>
+                        <div>
+                            <p class="font-bold text-xs text-navy-800">Grupo S. A.</p>
+                            <p class="text-[11px] text-gray-400">Traducción Legal / Empresa</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-navy-800 font-bold text-xs uppercase tracking-widest bg-gold-500/10 px-3.5 py-1.5 rounded-full border border-gold-500/30">Contacto Directo</span>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-navy-800">¿Tienes Alguna Duda?</h2>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Escríbenos por el formulario o conéctate directamente con nuestra página oficial de Facebook para recibir asistencia inmediata sobre tu documento en inglés o español.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <a href="https://www.facebook.com/profile.php?id=100077754728816" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-4 p-4 bg-white rounded-2xl border border-gray-200/80 hover:border-blue-500 transition-colors shadow-sm group">
+                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                <i class="fab fa-facebook-f"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-navy-800">Facebook Oficial</h4>
+                                <p class="text-xs text-gray-500">Traducciones Profesionales MJ</p>
+                            </div>
+                        </a>
+
+                        <div class="flex items-center space-x-4 p-4 bg-white rounded-2xl border border-gray-200/80 shadow-sm">
+                            <div class="w-12 h-12 bg-amber-50 text-gold-600 rounded-xl flex items-center justify-center text-2xl">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-navy-800">Idiomas Atendidos</h4>
+                                <p class="text-xs text-gray-500">Inglés <-> Español Exclusivamente</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Box -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-lg border border-gray-200/80">
+                        <h3 class="text-2xl font-heading font-bold text-navy-800 mb-2">Envíanos un Mensaje</h3>
+                        <p class="text-xs text-gray-500 mb-6">Completa tus datos y nos comunicaremos a la brevedad.</p>
+
+                        <!-- Visual Alert Message -->
+                        <div id="contact-alert" class="hidden mb-6 p-4 rounded-xl text-sm font-medium"></div>
+
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="contact-name" class="block text-xs font-bold uppercase text-navy-800 mb-1">Nombre Completo *</label>
+                                    <input type="text" id="contact-name" required placeholder="Ej. Ana Martínez" class="w-full bg-slate-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label for="contact-email" class="block text-xs font-bold uppercase text-navy-800 mb-1">Correo Electrónico *</label>
+                                    <input type="email" id="contact-email" required placeholder="ejemplo@correo.com" class="w-full bg-slate-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="contact-pair" class="block text-xs font-bold uppercase text-navy-800 mb-1">Combinación de Idiomas</label>
+                                    <select id="contact-pair" class="w-full bg-slate-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none font-semibold text-navy-800">
+                                        <option value="Inglés a Español">Inglés ➔ Español</option>
+                                        <option value="Español a Inglés">Español ➔ Inglés</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="contact-service" class="block text-xs font-bold uppercase text-navy-800 mb-1">Tipo de Servicio</label>
+                                    <select id="contact-service" class="w-full bg-slate-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none font-semibold text-navy-800">
+                                        <option value="Certificada">Traducción Certificada / Oficial</option>
+                                        <option value="Técnica / Corporativa">Técnica / Corporativa</option>
+                                        <option value="Digital / Web">Sitio Web / Digital</option>
+                                        <option value="Corrección de Estilo">Corrección de Estilo</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="contact-message" class="block text-xs font-bold uppercase text-navy-800 mb-1">Detalles del Documento *</label>
+                                <textarea id="contact-message" rows="4" required placeholder="Describe el tipo de documento, número de páginas y fecha límite deseada..." class="w-full bg-slate-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-navy-800 hover:bg-navy-900 text-white font-bold py-3.5 px-6 rounded-xl shadow-md transition-all text-xs uppercase tracking-wider flex items-center justify-center space-x-2">
+                                <i class="fas fa-paper-plane text-gold-400"></i>
+                                <span>Enviar Mensaje</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-white border-t border-white/10 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gold-500 rounded-xl flex items-center justify-center text-navy-900 font-heading font-black text-lg">
+                            MJ
+                        </div>
+                        <span class="font-heading font-bold text-lg text-white">Traducciones MJ</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Servicios especializados de traducción e interpretación escrita. Exclusividad e idoneidad en combinación Inglés <-> Español.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-xs uppercase tracking-wider text-gold-400 mb-4">Navegación</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="#cotizador" class="hover:text-white transition-colors">Cotizador Instantáneo</a></li>
+                        <li><a href="#servicios" class="hover:text-white transition-colors">Especialidades</a></li>
+                        <li><a href="#proceso" class="hover:text-white transition-colors">Proceso de Trabajo</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-xs uppercase tracking-wider text-gold-400 mb-4">Especialización</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li>Inglés ➔ Español</li>
+                        <li>Español ➔ Inglés</li>
+                        <li>Traducción Jurada / Visas</li>
+                        <li>Traducción Académica / Títulos</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-xs uppercase tracking-wider text-gold-400 mb-4">Red Social Oficial</h4>
+                    <p class="text-xs text-slate-300 mb-4">Visita nuestra página en Facebook para contacto rápido:</p>
+                    <a href="https://www.facebook.com/profile.php?id=100077754728816" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all">
+                        <i class="fab fa-facebook-square text-base"></i>
+                        <span>Página Oficial MJ</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4">
+                <p>&copy; <span id="year"></span> Traducciones Profesionales MJ. Todos los derechos reservados.</p>
+                <div class="flex space-x-6">
+                    <span class="hover:text-slate-200 cursor-pointer">Inglés <-> Español</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Messenger Shortcut Button -->
+    <a href="https://www.facebook.com/profile.php?id=100077754728816" target="_blank" rel="noopener noreferrer" aria-label="Contactar por Messenger en Facebook" class="fixed bottom-6 right-6 z-40 bg-blue-600 hover:bg-blue-500 text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 group border-2 border-white">
+        <i class="fab fa-facebook-messenger text-2xl"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out font-bold text-xs pl-0 group-hover:pl-2">
+            Messenger Facebook
+        </span>
+    </a>
+
+    <!-- Application JavaScript Logic -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Calculator Logic strictly restricted to EN <-> ES
+        const volumeRange = document.getElementById('volume-range');
+        const volumeInput = document.getElementById('volume-input');
+        const volumeIndicator = document.getElementById('volume-indicator');
+        const docTypeSelect = document.getElementById('doc-type');
+        const urgencySelect = document.getElementById('urgency-select');
+        const currencySelect = document.getElementById('currency-select');
+
+        const calculatedPriceEl = document.getElementById('calculated-price');
+        const calculatedCurrencyEl = document.getElementById('calculated-currency');
+        const calculatedTimeEl = document.getElementById('calculated-time');
+        const btnFacebook = document.getElementById('btn-quote-facebook');
+
+        // Inputs sync
+        volumeRange.addEventListener('input', (e) => {
+            volumeInput.value = e.target.value;
+            calculateQuote();
+        });
+
+        volumeInput.addEventListener('input', (e) => {
+            let val = parseInt(e.target.value) || 1;
+            if (val < 1) val = 1;
+            if (val > 500) val = 500;
+            volumeRange.value = Math.min(val, 50);
+            calculateQuote();
+        });
+
+        document.querySelectorAll('input[name="language_pair"]').forEach(radio => {
+            radio.addEventListener('change', calculateQuote);
+        });
+
+        [docTypeSelect, urgencySelect, currencySelect].forEach(element => {
+            element.addEventListener('change', calculateQuote);
+        });
+
+        function calculateQuote() {
+            const pages = parseInt(volumeInput.value) || 1;
+            const currency = currencySelect.value;
+            
+            // Selected language pair
+            const selectedPair = document.querySelector('input[name="language_pair"]:checked').value;
+            const pairText = selectedPair === 'en-es' ? 'Inglés a Español' : 'Español a Inglés';
+
+            // Base rate per page (MXN / USD)
+            let baseRate = currency === 'MXN' ? 180 : 10;
+            
+            // Document type multiplier
+            const selectedDocOption = docTypeSelect.options[docTypeSelect.selectedIndex];
+            const docFactor = parseFloat(selectedDocOption.getAttribute('data-factor')) || 1.0;
+            
+            // Urgency multiplier
+            const selectedUrgencyOption = urgencySelect.options[urgencySelect.selectedIndex];
+            const urgencyMultiplier = parseFloat(selectedUrgencyOption.getAttribute('data-multiplier')) || 1.0;
+
+            // Price calculation formula
+            let calculatedPageRate = baseRate * docFactor * urgencyMultiplier;
+            let totalMin = Math.round(calculatedPageRate * pages * 0.92);
+            let totalMax = Math.round(calculatedPageRate * pages * 1.15);
+
+            // Standard delivery: 2 business days for every block of 10 pages.
+            const deliveryDays = Math.ceil(pages / 10) * 2;
+            const expressOption = urgencySelect.querySelector('option[value="express"]');
+            if (expressOption) expressOption.disabled = pages > 20;
+            if (pages > 20 && urgencySelect.value === 'express') urgencySelect.value = 'standard';
+
+            let timeText;
+            if (urgencySelect.value === 'express' && pages <= 20) {
+                timeText = pages <= 10 ? 'Entrega exprés: 24 horas hábiles' : 'Entrega exprés: 48 horas hábiles';
+            } else {
+                timeText = `${deliveryDays} días hábiles`;
+            }
+
+            // UI Updates
+            const wordEstimate = pages * 250;
+            volumeIndicator.textContent = `${pages} ${pages === 1 ? 'Página' : 'Páginas'} (~${wordEstimate.toLocaleString()} Palabras)`;
+            
+            const currencySymbol = currency === 'MXN' ? '$' : 'USD $';
+            calculatedPriceEl.textContent = `${currencySymbol}${totalMin.toLocaleString()} - ${currencySymbol}${totalMax.toLocaleString()}`;
+            calculatedCurrencyEl.textContent = currency;
+            calculatedTimeEl.textContent = timeText;
+
+            // Pre-filled Messenger & WhatsApp Message
+
+            const certifiedText = 'No especificado';
+            const quoteMessage = `Hola Traducciones Profesionales MJ, me interesa cotizar una traducción:
+- Idiomas: ${pairText}
+- Tipo de Documento: ${selectedDocOption.text}
+- Volumen: ${pages} páginas (~${wordEstimate} palabras)
+- Tiempo deseado: ${selectedUrgencyOption.text}
+- Certificada: ${certifiedText}
+- Estimación calculada: ${currencySymbol}${totalMin} - ${currencySymbol}${totalMax} ${currency}`;
+        }
+
+        // Run initial calculation on page load
+        calculateQuote();
+
+        // Contact Form Handling (Interactive Feedback)
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const alertBox = document.getElementById('contact-alert');
+            const name = document.getElementById('contact-name').value;
+
+            alertBox.className = "mb-6 p-4 rounded-xl text-xs sm:text-sm font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300 block shadow-sm";
+            alertBox.innerHTML = `<i class="fas fa-check-circle mr-2 text-base"></i> ¡Muchas gracias, <strong>${name}</strong>! Tu consulta de traducción ha sido registrada. Nos comunicaremos contigo muy pronto.`;
+
+            document.getElementById('contact-form').reset();
+            alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+<script>
+/* Language switcher: text nodes have no dataset property, so originals are stored safely in WeakMaps. */
+const i18n = {"Inicio": "Home", "Cotizador": "Quote", "Servicios": "Services", "Proceso": "Process", "Nosotros": "About Us", "Contacto": "Contact", "Facebook": "Facebook", "Cotizar Ahora": "Get a Quote", "Por Qué Elegirnos": "Why Choose Us", "Página Oficial de Facebook": "Official Facebook Page", "Cotización Inmediata": "Instant Quote", "Especialistas Exclusivos: Inglés <-> Español": "Exclusive Specialists: English <-> Spanish", "Traducciones Certificadas y Profesionales": "Certified, Professional Translations", "Inglés y Español": "English and Spanish", "Servicios especializados de traducción jurada, académica, técnica y corporativa. Garantía de precisión, confidencialidad y validez oficial.": "Specialized sworn, academic, technical, and corporate translation services. Precision, confidentiality, and official validity guaranteed.", "Calcular Cotización Gratis": "Get a Free Quote", "Página de Facebook": "Facebook Page", "Validez Oficial": "Official Validity", "Traducción Certificada": "Certified Translation", "Entrega Exprés": "Express Delivery", "Respuesta Inmediata": "Immediate Response", "Confidencial": "Confidential", "Especialización Bilingüe": "Bilingual Specialization", "Inglés (English)": "English", "Idioma": "Language", "Oficial & Jurado": "Official & Sworn", "Visas, Actas, Títulos": "Visas, Certificates, Degrees", "Corporativo": "Corporate", "Contratos, Manuales": "Contracts, Manuals", "Encuéntranos en Facebook": "Find us on Facebook", "Ir": "Go", "Cotizador Instantáneo": "Instant Quote", "Calcula el Costo de tu Traducción": "Calculate Your Translation Cost", "Selecciona la combinación de idioma (exclusivamente Inglés <-> Español), tipo de documento y volumen.": "Select the language pair (English <-> Spanish only), document type, and volume.", "1. Combinación de Idiomas (Exclusivo)": "1. Language Combination (Exclusive)", "Sólo Inglés y Español": "English and Spanish Only", "Inglés a Español": "English to Spanish", "Español a Inglés": "Spanish to English", "2. Tipo de Documento": "2. Document Type", "Certificado / Jurado / Oficial (Actas, Visas, Diplomas, Contratos)": "Certified / Sworn / Official (Certificates, Visas, Diplomas, Contracts)", "General (Cartas, Artículos, Documentos Personales)": "General (Letters, Articles, Personal Documents)", "Técnico / Médico / Científico (Manuales, Informes)": "Technical / Medical / Scientific (Manuals, Reports)", "Corporativo / Negocios (Estatutos, Auditorías)": "Corporate / Business (Bylaws, Audits)", "Sitio Web / Contenido Digital": "Website / Digital Content", "3. Volumen del Documento": "3. Document Volume", "Páginas": "Pages", "Página": "Page", "Palabras": "Words", "* Estimación promedio estándar basada en ~250 palabras por página.": "* Standard average estimate based on ~250 words per page.", "4. Tiempo de Entrega": "4. Delivery Time", "Estándar (24 a 48 Horas)": "Standard (24 to 48 Hours)", "Exprés (Menos de 24 Horas)": "Express (Under 24 Hours)", "Urgente / Mismo Día": "Urgent / Same Day", "Moneda de Cotización": "Quote Currency", "Pesos Mexicanos (MXN $)": "Mexican Pesos (MXN $)", "Dólares Americanos (USD $)": "US Dollars (USD $)", "Estimado Aproximado": "Approximate Estimate", "Entrega Estimada:": "Estimated Delivery:", "¿Te interesa esta estimación? Envíanos los detalles para confirmar tu precio final:": "Interested in this estimate? Send us the details to confirm your final price:", "Cotizar en Facebook": "Get a Quote on Facebook", "Nuestras Especialidades": "Our Specialties", "Servicios de Traducción Inglés <-> Español": "English <-> Spanish Translation Services", "Ofrecemos máxima rigurosidad y calidad terminológica adaptada a cada tipo de documento.": "We offer the utmost rigor and terminological quality tailored to each document type.", "Traducción Certificada / Jurada": "Certified / Sworn Translation", "Documentos oficiales válidos ante autoridades gubernamentales, trámites de visado (USCIS/Embajadas) e instituciones educativas.": "Official documents valid for government authorities, visa procedures (USCIS/Embassies), and educational institutions.", "Actas de nacimiento, matrimonio y defunción": "Birth, marriage, and death certificates", "Títulos, diplomas y kardex escolares": "Degrees, diplomas, and academic transcripts", "Certificados, visados y antecedentes": "Certificates, visas, and background records", "Cotizar Traducción Oficial": "Quote an Official Translation", "Técnica y Corporativa": "Technical and Corporate", "Traducción experta para empresas e industrias que requieren precisión conceptual entre inglés y español.": "Expert translation for businesses and industries that require conceptual precision between English and Spanish.", "Contratos, acuerdos y estatutos": "Contracts, agreements, and bylaws", "Manuales de operación e ingeniería": "Operations and engineering manuals", "Informes financieros y corporativos": "Financial and corporate reports", "Cotizar Documento Técnico": "Quote a Technical Document", "Sitios Web y Contenido Digital": "Websites and Digital Content", "Localización natural de páginas web, tiendas en línea y aplicaciones para conectar con mercados angloparlantes e hispanohablantes.": "Natural localization of websites, online stores, and apps to connect with English- and Spanish-speaking markets.", "Plataformas e-commerce y landing pages": "E-commerce platforms and landing pages", "Artículos y blogs especializados": "Specialized articles and blogs", "Presentaciones y brochures digitales": "Presentations and digital brochures", "Cotizar Proyecto Web": "Quote a Web Project", "Corrección de Estilo y Edición": "Style Correction and Editing", "Revisión ortográfica, gramatical y estilística minuciosa para textos ya traducidos en inglés o español.": "Thorough spelling, grammar, and style review for texts already translated into English or Spanish.", "Corrección ortográfica y sintáctica": "Spelling and syntax correction", "Adecuación de tono profesional": "Professional tone adaptation", "Verificación de glosario técnico": "Technical glossary verification", "Cotizar Revisión": "Quote a Review", "Académica e Investigación": "Academic and Research", "Traducción impecable para artículos científicos, tesis, ensayos y maestrías internacionales.": "Impeccable translation for scientific articles, theses, essays, and international master’s programs.", "Papers y abstracts de investigación": "Research papers and abstracts", "Tesinas y proyectos finales": "Dissertations and final projects", "Cartas de recomendación académica": "Academic recommendation letters", "Cotizar Académico": "Quote an Academic Project", "¿Consulta Personalizada?": "Need a Custom Consultation?", "Escríbenos directamente a través de Facebook Messenger para proyectos con urgencia especial o archivos extensos.": "Write to us directly through Facebook Messenger for specially urgent projects or extensive files.", "Escribir en Facebook": "Write on Facebook", "Proceso Transparente": "Transparent Process", "Tu Traducción en 4 Pasos Sencillos": "Your Translation in 4 Simple Steps", "Atención ágil desde la recepción de tu archivo hasta la entrega final.": "Agile service from receiving your file to final delivery.", "Envío de Documento": "Send Your Document", "Nos compartes tu documento digital o foto clara vía Facebook Messenger, correo.": "Send us your digital document or a clear photo via Facebook Messenger or email.", "Cotización Formal": "Formal Quote", "Revisamos el conteo exacto de palabras y te confirmamos tarifa fija y horario exacto de entrega.": "We review the exact word count and confirm a fixed rate and exact delivery time.", "Traducción & Revisión": "Translation & Review", "Procesamos la traducción respetando el formato original y realizando control de calidad doble.": "We process the translation while preserving the original format and performing double quality control.", "Entrega Final": "Final Delivery", "Recibes tu archivo final en formato PDF listo para presentar, certificado o digitalizado.": "You receive your final file as a PDF, ready to submit, certify, or digitize.", "Opiniones de Clientes": "Customer Reviews", "Lo Que Opinan Quienes Confían en MJ": "What Those Who Trust MJ Say", "Traducciones realizadas con rigor para trámites académicos y profesionales.": "Translations completed with rigor for academic and professional procedures.", "Contacto Directo": "Direct Contact", "¿Tienes Alguna Duda?": "Do You Have Any Questions?", "Facebook Oficial": "Official Facebook", "Idiomas Atendidos": "Languages Served", "Inglés <-> Español Exclusivamente": "English <-> Spanish Only", "Envíanos un Mensaje": "Send Us a Message", "Completa tus datos y nos comunicaremos a la brevedad.": "Complete your details and we will contact you shortly.", "Nombre Completo *": "Full Name *", "Correo Electrónico *": "Email Address *", "Tipo de Servicio": "Service Type", "Traducción Certificada / Oficial": "Certified / Official Translation", "Técnica / Corporativa": "Technical / Corporate", "Corrección de Estilo": "Style Correction", "Detalles del Documento *": "Document Details *", "Enviar Mensaje": "Send Message", "Navegación": "Navigation", "Especialidades": "Specialties", "Proceso de Trabajo": "Work Process", "Especialización": "Specialization", "Traducción Jurada / Visas": "Sworn Translation / Visas", "Traducción Académica / Títulos": "Academic Translation / Degrees", "Red Social Oficial": "Official Social Network", "Visita nuestra página en Facebook para contacto rápido:": "Visit our Facebook page for fast contact:", "Página Oficial MJ": "Official MJ Page", "Traducciones Profesionales MJ. Todos los derechos reservados.": "Professional Translations MJ. All rights reserved.", "Messenger Facebook": "Facebook Messenger", "Traducciones": "Translations", "Profesionales MJ": "Professional MJ", "Language": "Language", "English to Spanish": "English to Spanish", "Spanish to English": "Spanish to English"};
+const originalText = new WeakMap();
+const originalAttributes = new WeakMap();
+function translateText(text, lang) {
+  if (lang === 'es') return text;
+  const lead = (text.match(/^\s*/) || [''])[0];
+  const tail = (text.match(/\s*$/) || [''])[0];
+  const key = text.trim();
+  return lead + (i18n[key] || key) + tail;
+}
+function setSiteLanguage(lang) {
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const nodes=[]; while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node => {
+    const parent=node.parentElement;
+    if (!parent || parent.closest('script,style,#site-language')) return;
+    if (!originalText.has(node)) originalText.set(node,node.nodeValue);
+    node.nodeValue=translateText(originalText.get(node),lang);
+  });
+  document.querySelectorAll('[placeholder],[aria-label],[title]').forEach(el => {
+    let saved=originalAttributes.get(el);
+    if (!saved) { saved={}; ['placeholder','aria-label','title'].forEach(a=>{ if(el.hasAttribute(a)) saved[a]=el.getAttribute(a); }); originalAttributes.set(el,saved); }
+    Object.entries(saved).forEach(([attr,value])=>el.setAttribute(attr,translateText(value,lang)));
+  });
+  document.documentElement.lang=lang;
+  document.documentElement.dir='ltr';
+  document.querySelectorAll('#site-language button').forEach(btn => {
+    btn.className='px-3 py-1.5 rounded-full text-xs font-bold '+(btn.dataset.lang===lang?'bg-navy-800 text-white':'text-navy-800');
+    btn.setAttribute('aria-pressed', String(btn.dataset.lang===lang));
+  });
+  document.title=lang==='en'?'Professional Translations MJ | English <-> Spanish':'Traducciones Profesionales MJ | Inglés <-> Español';
+  try { localStorage.setItem('mj-site-language',lang); } catch(e) {}
+  if (typeof calculateQuote==='function') calculateQuote();
+}
+document.addEventListener('DOMContentLoaded', () => {
+  let lang='es'; try { lang=localStorage.getItem('mj-site-language') || 'es'; } catch(e) {}
+  setSiteLanguage(lang);
+});
+</script></body>
+</html>
